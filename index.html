@@ -11,6 +11,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0b0b0b;
+  --text:#ffffff;
+  --card:#111;
+  --border:rgba(255,255,255,0.1);
+}
+
+.light-mode{
+  --bg:#ffffff;
+  --text:#111111;
+  --card:#f5f5f5;
+  --border:rgba(0,0,0,0.1);
+}
 body{
   background:var(--bg);
   color:var(--text);
@@ -30,14 +43,14 @@ nav{
   position:sticky;
   top:0;
   z-index:100;
-  background:#000;
+  background:var(--bg);
   padding:14px 18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 nav a{
-  color:#fff;
+  color:var(--text);
   text-decoration:none;
   margin-left:14px;
   font-size:14px;
@@ -84,9 +97,9 @@ header p{
 .filters button{
   padding:8px 16px;
   border-radius:20px;
-  border:1px solid rgba(255,255,255,0.2);
+  border:1px solid var(--border);
   background:transparent;
-  color:#fff;
+  color:var(--text);
   cursor:pointer;
   font-size:14px;
 
@@ -95,15 +108,15 @@ header p{
 
 /* Hover effect */
 .filters button:hover{
-  background:rgba(255,255,255,0.1);
+  background:var(--border);
   transform:translateY(-2px);
 }
 
 /* Active button */
 .filters button.active{
-  background:#fff;
-  color:#000;
-  border-color:#fff;
+  background:var(--text);
+  color:var(--bg);
+  border-color:var(--text);
 }
 
 /* SECTIONS */
