@@ -247,19 +247,30 @@ section{
   display:grid;
   gap:12px;
 }
-.contact-form input,
-.contact-form textarea{
-  padding:12px;
-  border-radius:8px;
-  border:none;
+#contact input,
+#contact textarea{
+  width:100%;
+  padding:14px;
+  margin:10px 0;
+  border-radius:30px;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  outline:none;
+  transition:0.3s;
+  border-color:var(--text);
+  box-shadow:0 0 0 2px rgba(0,0,0,0.05);
+  color:var(--text);
+  opacity:0.6;
 }
-.contact-form button{
-  padding:12px;
+#contact button{
+  padding:12px 24px;
   border-radius:30px;
   border:none;
-  background:#fff;
-  color:#000;
-  font-weight:600;
+  background:var(--text);
+  color:var(--bg);
+  cursor:pointer;
+  transition:0.3s;
 }
 
 /* FOOTER */
@@ -521,7 +532,7 @@ html{
 
       <div class="home-buttons">
         <a href="#portfolio" class="btn primary">View Portfolio</a>
-        <a href="#contact" class="btn">Contact Me</a>
+        <a href="#contact" class="btn primary">Contact Me</a>
       </div>
     </div>
 
