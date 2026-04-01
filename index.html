@@ -338,10 +338,9 @@ footer{
   overflow:hidden;
 }
 /* DARK MODE HERO */
-body:not(.light-mode) .home{
-  background: linear-gradient(135deg,#0b0b0b,#0a1f2f,#2b0a1f);
+body.light-mode .home{
+  background: linear-gradient(135deg,#f5f7fb,#e9eef5);
 }
-
 body.light-mode section{
   background:rgba(255,255,255,0.6);
   backdrop-filter:blur(10px);
@@ -379,6 +378,9 @@ body.light-mode section{
   z-index:0;
 
   animation:floatGlow2 14s ease-in-out infinite alternate;
+}
+body.light-mode .home::after{
+  opacity:0.1;
 }
 .home-content{
   max-width:1100px;
