@@ -65,23 +65,38 @@ header p{
   margin-top:8px;
 }
 
-/* FILTERS */
+/* FILTER BUTTONS */
 .filters{
   display:flex;
+  flex-wrap:wrap;
   gap:10px;
-  overflow-x:auto;
-  padding:12px;
-  background:#111;
+  justify-content:center;
+  margin:20px 0;
 }
+
 .filters button{
-  flex:0 0 auto;
-  background:none;
-  border:1px solid #444;
-  color:#fff;
-  padding:8px 14px;
+  padding:8px 16px;
   border-radius:20px;
-  font-size:13px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:transparent;
+  color:#fff;
   cursor:pointer;
+  font-size:14px;
+
+  transition:all 0.3s ease;
+}
+
+/* Hover effect */
+.filters button:hover{
+  background:rgba(255,255,255,0.1);
+  transform:translateY(-2px);
+}
+
+/* Active button */
+.filters button.active{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
 }
 
 /* SECTIONS */
@@ -498,13 +513,13 @@ html{
 </section>
 
 <div class="filters">
-<button onclick="showAll()">All</button>
-<button onclick="showOnly('concerts')">Concerts</button>
-<button onclick="showOnly('dance')">Dance</button>
-<button onclick="showOnly('dj')">DJ</button>
-<button onclick="showOnly('photoshoot')">Photoshoot</button>
-<button onclick="showOnly('music')">Music</button>
-<button onclick="showOnly('sports')">Sports</button>
+  <button onclick="showAll()">All</button>
+  <button onclick="showOnly('concerts')">Concerts</button>
+  <button onclick="showOnly('dance')">Dance</button>
+  <button onclick="showOnly('dj')">DJ</button>
+  <button onclick="showOnly('photoshoot')">Photoshoot</button>
+  <button onclick="showOnly('music')">Music</button>
+  <button onclick="showOnly('sports')">Sports</button>
 </div>
 
 <section id="portfolio">
@@ -710,6 +725,17 @@ document.addEventListener("keydown", (e)=>{
   if(e.key === "ArrowRight") nextImage();
   if(e.key === "ArrowLeft") prevImage();
 });
+function showAll(){
+  document.querySelectorAll('.category-section').forEach(sec=>{
+    sec.style.display = 'block';
+  });
+}
+
+function showOnly(id){
+  document.querySelectorAll('.category-section').forEach(sec=>{
+    sec.style.display = (sec.id === id) ? 'block' : 'none';
+  });
+}
 </script>
 </body>
 </html>
