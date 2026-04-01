@@ -302,8 +302,7 @@ footer{
 /* HOME / ABOUT */
 .home{
   padding:80px 16px;
-  background:#0b0b0b;
-
+  background:var(--bg); /* 🔥 FIX */
   position:relative;
   overflow:hidden;
 }
@@ -349,15 +348,19 @@ footer{
 .home-text h1{
   font-size:42px;
   margin-bottom:12px;
+  color:var(--text); /* 🔥 ADD THIS */
 }
+
 .home-text p{
   opacity:.8;
   max-width:500px;
+  color:var(--text); /* 🔥 ADD THIS */
 }
 .home-buttons{
   margin-top:20px;
   display:flex;
   gap:14px;
+  color:var(--text);
 }
 .btn{
   padding:12px 22px;
