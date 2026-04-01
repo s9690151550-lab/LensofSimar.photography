@@ -528,30 +528,19 @@ html{
 </div>
 
 <script>
-document.querySelectorAll('.photo img').forEach(img=>{
-  img.addEventListener('click', ()=>{
-    const lightbox = document.getElementById('lightbox');
-    const lightImg = document.getElementById('lightbox-img');
+window.addEventListener("load", () => {
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+    });
+  },{threshold:0.1});
 
-    lightImg.src = img.src;
-    lightbox.style.display = 'flex';
-
-    setTimeout(()=>{
-      lightbox.classList.add('show');
-    },10);
+  document.querySelectorAll('.photo img').forEach(img=>{
+    observer.observe(img);
   });
 });
-
-function closeLightbox(){
-  const lightbox = document.getElementById('lightbox');
-
-  lightbox.classList.remove('show');
-
-  setTimeout(()=>{
-    lightbox.style.display = 'none';
-  },200);
-}
 </script>
-
 </body>
 </html>
