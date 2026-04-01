@@ -735,6 +735,24 @@ function showOnly(id){
   document.querySelectorAll('.category-section').forEach(sec=>{
     sec.style.display = (sec.id === id) ? 'block' : 'none';
   });
+function setActive(btn){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function showAll(){
+  setActive(event.target);
+  document.querySelectorAll('.category-section').forEach(sec=>{
+    sec.style.display = 'block';
+  });
+}
+
+function showOnly(id){
+  setActive(event.target);
+  document.querySelectorAll('.category-section').forEach(sec=>{
+    sec.style.display = (sec.id === id) ? 'block' : 'none';
+  });
+}
 }
 </script>
 </body>
