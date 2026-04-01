@@ -16,13 +16,18 @@
   --text:#ffffff;
   --card:#111;
   --border:rgba(255,255,255,0.1);
-}
 
+  /* ADD THIS 👇 */
+  --section:#0f172a;
+}
 .light-mode{
-  --bg:#ffffff;
+  --bg:#f5f7fb;
   --text:#111111;
-  --card:#f5f5f5;
+  --card:#ffffff;
   --border:rgba(0,0,0,0.1);
+
+  /* ADD THIS 👇 */
+  --section:#e9eef5;
 }
 body{
   background:var(--bg);
@@ -227,7 +232,11 @@ section{
   z-index:2;
 }
 /* CONTACT */
-#contact{text-align:center}
+#contact{
+  text-align:center;
+  padding:60px 20px;
+  background:var(--section);
+}
 .contact-buttons{
   display:flex;
   flex-direction:column;
@@ -235,10 +244,10 @@ section{
   margin:20px auto;
 }
 .contact-buttons a{
-  border:1px solid #444;
+  border:1px solid var(--border);
   padding:10px;
   border-radius:30px;
-  color:#fff;
+  color:var(--text);
   text-decoration:none;
   font-size:14px;
 }
