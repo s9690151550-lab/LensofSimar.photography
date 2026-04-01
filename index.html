@@ -232,6 +232,8 @@ footer{
 
   pointer-events:none;
   z-index:0;
+
+  animation:floatGlow1 8s ease-in-out infinite alternate;
 }
 
 .home::after{
@@ -246,6 +248,8 @@ footer{
 
   pointer-events:none;
   z-index:0;
+
+  animation:floatGlow2 10s ease-in-out infinite alternate;
 }
 .home-content{
   max-width:1100px;
@@ -345,6 +349,29 @@ html{
   gtag('js', new Date());
   gtag('config', 'G-90EYR72CEM');
 </script>
+@keyframes floatGlow1{
+  0%{
+    transform:translate(0px, 0px) scale(1);
+  }
+  50%{
+    transform:translate(40px, 30px) scale(1.1);
+  }
+  100%{
+    transform:translate(-30px, 20px) scale(0.95);
+  }
+}
+
+@keyframes floatGlow2{
+  0%{
+    transform:translate(0px, 0px) scale(1);
+  }
+  50%{
+    transform:translate(-40px, -20px) scale(1.1);
+  }
+  100%{
+    transform:translate(20px, -30px) scale(0.95);
+  }
+}
 
 </style>
 </head>
